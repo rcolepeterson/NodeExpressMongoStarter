@@ -1,0 +1,11 @@
+li.list-group-item
+                p
+                    h5#bandName= band.bandname
+                    h4= band._id
+                    div.btn-toolbar
+                        button.btn.btn-default.btn-danger.btn-sm.getBtn(data-id="#{band._id}")
+                            |READ
+                        button.btn.btn-info.btn-sm.putBtn(data-id="#{band._id}")
+                            |UPDATE
+                        button.btn.btn-default.btn-danger.btn-sm.delBtn(data-id="#{band._id}")
+                            |DELETE
