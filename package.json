@@ -1,27 +1,27 @@
 {
-    "name": "NodeExpressMongoStarter",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "express": "3.4.8",
-        "jade": "*",
-        "mongodb": "*",
-        "connect": "*",
-        "mongoose": "*",
-        "grunt-concurrent": "~0.4.3",
-        "grunt-nodemon": "~0.2.0",
-        "grunt-contrib-jshint": "~0.8.0",
-        "grunt-contrib-watch": "~0.5.3"
-
-    },
-    "devDependencies": {
-        "grunt-concurrent": "latest",
-        "grunt": "~0.4.2",
-        "grunt-nodemon": "~0.2.0",
-        "grunt-contrib-watch": "latest",
-        "grunt-contrib-jshint": "latest"
-    }
+  "name": "NodeExpressMongoStarter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "*",
+    "mongodb": "*",
+    "connect": "*",
+    "mongoose": "*",
+    "grunt-concurrent": "~0.4.3",
+    "grunt-nodemon": "~0.2.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "devDependencies": {
+    "grunt-concurrent": "latest",
+    "grunt": "~0.4.2",
+    "grunt-nodemon": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-jshint": "latest",
+    "open": "0.0.4"
+  }
 }

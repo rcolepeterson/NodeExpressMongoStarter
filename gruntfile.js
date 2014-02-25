@@ -36,23 +36,41 @@ module.exports = function(grunt) {
                 src: ['gruntfile.js', 'app.js', 'public/javascripts/**'],
                 options: {
                     jshintrc: true
-                
+
                 }
             }
         },
         nodemon: {
             dev: {
+                script: 'app.js',
                 options: {
-                    file: 'app.js',
-                    args: [],
-                    ignoredFiles: ['public/**'],
-                    watchedExtensions: ['js'],
                     nodeArgs: ['--debug'],
-                    delayTime: 1,
                     env: {
-                        PORT: 3000
+                        PORT: '3000'
                     },
-                    cwd: __dirname
+                    // omit this property if you aren't serving HTML files and 
+                    // don't want to open a browser tab on start
+                    callback: function(nodemon) {
+                        nodemon.on('log', function(event) {
+                            console.log(event.colour);
+                        });
+
+                        // opens browser on initial server start
+                        nodemon.on('config:update', function() {
+                            // Delay before server listens on port
+                            setTimeout(function() {
+                                require('open')('http://localhost:3000');
+                            }, 1000);
+                        });
+
+                        // refreshes browser when server reboots
+                        nodemon.on('restart', function() {
+                            // Delay before server listens on port
+                            setTimeout(function() {
+                                require('fs').writeFileSync('.rebooted', 'rebooted');
+                            }, 1000);
+                        });
+                    }
                 }
             }
         },
@@ -62,7 +80,7 @@ module.exports = function(grunt) {
                 logConcurrentOutput: true
             }
         }
-        
+
     });
 
     //Load NPM tasks 
@@ -77,4 +95,3 @@ module.exports = function(grunt) {
     //Default task(s).
     grunt.registerTask('default', ['jshint', 'concurrent']);
 };
-
