@@ -10,7 +10,6 @@ After getting the code and putting it in a project folder ...
 1. INSTALL NODE.JS - http://nodejs.org/
 2. INSTALL EXPRESS - cmd 'npm install -g express'.
 3. INSTALL DEPENDENCIES - cmd to where this project lives and run ... 'npm install'.
-4. INSTALL GRUNT - cmd 'npm install -g grunt-cli'.
 
 Get MongoDB and start it up.
 
